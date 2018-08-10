@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    background: #f2f2f2;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    padding-top: 55px;
+}
+
+header {
+    background: #4357ad;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.menu {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu .logo {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.menu .logo img {
+    vertical-align: top;
+    height: 40px;
+}
+
+.menu .btn-menu {
+    display: none;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin-top: 5px;
+}
+
+.menu .logo:hover {
+    background: #4357ad;
+    text-align: right;
+}
+
+.menu .links {
+    display: inline-block;
+    text-align: right;
+}
+
+.menu .links a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1em;
+    text-align: center;
+    font-size: 1em;
+}
+
+.menu .links a:hover {
+    background: #f2f2f2;
+    color: #4357ad;
+}
+
+.menu .links i {
+    margin-right: 5px;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .75);
+}
+
+main article h1 {
+    font-weight: normal;
+    margin-bottom: .5em;
+}
+
+main article hr {
+    margin-bottom: 1em;
+    height: 2px;
+    background: #4357ad;
+    border: none;
+}
+
+main article p {
+    margin-bottom: 1em;
+}
+
+/*MENU SPECIAL FX*/
+
+.headroom {
+    transition: transform .3s ease;
+}
+
+.headroom--pinned {
+    transform: translateY(0%);
+}
+
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+/*MEDIA QUERYS*/
+
+/*Responsive utilities*/
+
+@media screen and (max-width: 700px) {
+    header .menu {
+        flex-direction: column;
+    }
+    header .menu .logo {
+        display: flex;
+        flex-direction: row;
+        /*Acomoda los elementos flex, dejando un espacio entre ellos*/
+        justify-content: space-between;
+        width: 100%;
+        padding: 1em;
+    }
+    header .menu .logo .btn-menu {
+        display: inline-block;
+    }
+    header .menu .links {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        /*Si no caben los enlaces, que se pongan debajo*/
+        flex-wrap: wrap;
+        /*los centra y deja un pequeño espacio fuera y dentro de los elementos hijos */
+        justify-content: space-around;
+    }
+}
